@@ -1,0 +1,30 @@
+{
+  "name": "quanlythuctap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.11.1",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "nunjucks": "^3.1.2",
+    "express-session": "^1.15.6",
+    "knex": "^0.14.4",
+    "mysql": "^2.15.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.5.7",
+    "jquery": "^3.3.1",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "serve-favicon": "~2.4.5"
+  }
+}
