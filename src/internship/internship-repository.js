@@ -1,3 +1,4 @@
+const status = require('../status/status');
 class InternshipRepository {
 
     constructor(connection) {
@@ -6,12 +7,16 @@ class InternshipRepository {
 
     createInternship(internship) {
         return this.connection('internships').insert({
+            company_id  : internship.getCompany().getId(),
             intern_id   : internship.getIntern().getId(),
             duration_id : internship.getDuration().getId(),
-            company_id  : internship.getCompany().getId(),
-            status      : internship.getStatus()
+            status      : status.OPEN
         })
     }
+
+
+
+
 }
 
 module.exports = InternshipRepository;

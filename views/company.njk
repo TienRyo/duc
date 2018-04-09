@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>COMPANY</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="page-header"><h1 class="text-center">List Company</h1></div>
+    <div class="row">
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="inputKeyword" placeholder="Keyword">
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-success btn-block">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+    <hr>
+    <ul  class="list-group-item" id="listCompanies"></ul>
+    <form id="Company">
+        <ul class="list-group">
+            {% for company in companies %}
+            <li class="list-group-item">
+                <a href="/detail-company/{{company.getId()}}">{{company.getName()}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </form>
+    <button class="btn btn-default" onClick="window.location.href='/add-company'">Add</button>
+</div>
+</body>
+<script id="companyTemplate" type="text/html">
+    <li><a class="list-group-item" href="/detail-company/:id">:companyName:</a></li>
+</script>
+<script>
+    $(document).ready(function () {
+        $('#inputKeyword').keyup(function () {
+            var $this = $(this);
+            $('#Company').hide();
+            $.get('/api/company', {
+                keyword: $this.val(),
+            }).then(renderCompanies)
+        });
+    });
+
+    function renderCompanies(companies) {
+        var template = $('#companyTemplate').html();
+        var resultsHtml = companies.map(function (company) {
+            return template.replace(':companyName:', company.name)
+                           .replace(':id', company.id)
+
+        }).join('');
+        $('#listCompanies').html(resultsHtml);
+    }
+</script>
+</html>

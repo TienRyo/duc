@@ -1,5 +1,6 @@
-module.exports = {
+ module.exports = {
     PENDING: 'PENDING',
     CONFIRMED: 'CONFIRMED',
-    FINISHED    : 'FINISHED'
+    FINISHED    : 'FINISHED',
+    OPEN        : 'OPEN'
 };

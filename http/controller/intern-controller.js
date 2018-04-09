@@ -35,6 +35,9 @@ class InternController {
                 res.render('detail.njk', {intern : values[0]})
             }).catch(next)
     }
+    renderAddCompany(req, res, next) {
+
+    }
 
 
 }

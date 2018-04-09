@@ -2,10 +2,12 @@ const express           = require('express');
 const bodyParser        = require('body-parser');
 const app               = express();
 const path              = require('path');
-const Searcher          = require('./src/search-service/searcher');
+const SearcherIntern    = require('./src/search-service/intern/searcher');
+const SearcherCompany   = require('./src/search-service/company/searcher');
 const UserRepository    = require('./auth/login/user-system');
 const CourseRepository  = require('./src/course/course-repository');
 const ManagerRepository = require('./src/manager/manager-repository');
+const CompanyRepository = require('./src/company/company-repository');
 const DurationRepository= require('./src/duration/duration-repository');
 const InternRepository  = require('./src/intern/intern-repository');
 const LecturerRepository = require('./src/lecturer/lecturer-repository');
@@ -31,11 +33,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.set('intern.searcher', new Searcher(knex, new InternFactory()));
+app.set('intern.searcher', new SearcherIntern(knex, new InternFactory()));
+app.set('company.searcher', new SearcherCompany(knex, new CompanyFactory()));
 app.set('users.repo', new UserRepository(knex));
 app.set('course.repo', new CourseRepository(knex));
 app.set('manager.repo', new ManagerRepository(knex));
 app.set('duration.repo', new DurationRepository(knex));
+app.set('company.repo', new CompanyRepository(knex));
 app.set('intern.repo', new InternRepository(knex));
 app.set('lecturer.repo', new LecturerRepository(knex));
 app.set('courseFactory', new CourseFactory());

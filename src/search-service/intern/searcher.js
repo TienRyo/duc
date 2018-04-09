@@ -1,5 +1,5 @@
-const Connection = require('../../database/knex-connection');
-const InternFactory = require('../../src/intern/intern-factory');
+const Connection = require('../../../database/knex-connection');
+const InternFactory = require('../../intern/intern-factory');
 
 class Searcher {
     /**

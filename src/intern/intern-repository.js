@@ -40,11 +40,11 @@ class InternRepository {
         })
     }*/
 
-    remove(lecturer) {
+    remove(code) {
         return this.connection('interns').update({
             deleted_at: new Date().toLocaleString()
         }).where({
-            code : lecturer.getCode()
+            code : code
         })
     }
 }

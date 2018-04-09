@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>LOGIN</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="margin-top: 100px">
+<div class="page-header"><h1 class="text-center">Login Your Account</h1></div>
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-3">
+        <form action="/login" method="get">
+            <div class="form-group col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </span>
+                    <input class="form-control" aria-describedby="basic-addon1" name="user" placeholder="Enter your user">
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">
+                           <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                    </span>
+                    <input type="password" class="form-control" aria-describedby="basic-addon1" name="password" placeholder="Enter your password">
+                </div>
+            </div>
+            <br>
+            <div class="form-group col-md-12">
+                <button id="post" class="btn btn-primary btn-block">
+                    <i class=" glyphicon glyphicon-ok"></i>
+                    <span class="hidden-sm hidden-xs">Login</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

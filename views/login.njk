@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>LOGIN</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+       <!-- <div class="navbar navbar-light navbar-static-top" style="background-color: #e3f2fd;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#" id="create" data-toggle="modal" data-target="#myModal">Create Book</a></li>
+                <li ><a href="#" id="search">Search Advance</a></li>
+            </ul>
+            <div class="navbar-form navbar-right" >
+                <div class="form-group">
+                    <div class="container-fluid">
+                        <div class="input-group">
+                            <input class="form-control" id="keyword" placeholder="Key Word">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+       <a href="#" id="create" data-toggle="modal" data-target="#myModal">login</a>
+       <div class="container">
+
+           <div class="modal fade" id="myModal" role="dialog">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h1 style="text-align: center" class="modal-title">Login Your Account</h1>
+                       </div>
+                       <div class="modal-body">
+                           <form class="form-group" id="" method="get" action="/login">
+                               <div class="input-group">
+                                   <span class="input-group-addon" id="basic-addon1">
+                                       <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                   </span>
+                                   <input class="form-control" aria-describedby="basic-addon1" name="user" placeholder="Enter your user">
+                               </div>
+                               <br>
+                               <div class="input-group">
+                                   <span class="input-group-addon" id="basic-addon1">
+                                       <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                   </span>
+                                   <input type="password" class="form-control" aria-describedby="basic-addon1" name="password" placeholder="Enter your password">
+                               </div>
+                               <br>
+                               <button type="submit" class="btn btn-primary">Login</button>
+                           </form>
+                       </div>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </body>
+</html>

@@ -5,6 +5,7 @@ class LecturerRepository {
 
     add(lecturer) {
         return this.connection('lecturers').insert({
+            code : lecturer.getCode(),
             name : lecturer.getName(),
             gender: lecturer.getGender(),
             phone : lecturer.getPhone(),
@@ -15,6 +16,7 @@ class LecturerRepository {
 
     edit(lecturer) {
         return this.connection('lecturers').update({
+            code : lecturer.getCode(),
             name : lecturer.getName(),
             gender: lecturer.getGender(),
             phone : lecturer.getPhone(),
@@ -25,11 +27,11 @@ class LecturerRepository {
         })
     }
 
-    remove(lecturer) {
+    remove(code) {
         return this.connection('lecturers').update({
             deleted_at : new Date().toLocaleString()
         }).where({
-            code : lecturer.getCode()
+            code : code
         })
     }
 
